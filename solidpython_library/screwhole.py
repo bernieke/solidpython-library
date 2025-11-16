@@ -26,6 +26,12 @@ class SCREW_CONFIG:
         head_diameter = 6.8
         head_depth = 3.2
 
+    class FISCHER_DUOPOWER_6_S:
+        countersunk = True
+        diameter = 4.5
+        head_diameter = 8.7
+        head_depth = 5
+
 
 def screwhole(length, screw):
     length += C * 2  # Make bigger to go completely through bottom and top
