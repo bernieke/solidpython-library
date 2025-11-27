@@ -12,6 +12,10 @@ from .common import C
 
 class SCREW_CONFIG:
 
+    class M2_5_THROUGH:
+        countersunk = False
+        diameter = 2.5
+
     class M3_INTO:
         countersunk = False
         diameter = 2.7
@@ -35,10 +39,10 @@ class SCREW_CONFIG:
 
 def screwhole(length, screw):
     length += C * 2  # Make bigger to go completely through bottom and top
-    obj = cylinder(r=screw.diameter / 2, h=length)  # Screw hole
+    obj = cylinder(d=screw.diameter, h=length)  # Screw hole
     if screw.countersunk:
-        obj += (cylinder(r1=screw.diameter / 2,
-                         r2=screw.head_diameter / 2,
+        obj += (cylinder(d1=screw.diameter,
+                         d2=screw.head_diameter,
                          h=screw.head_depth)
                 .translateZ(length - screw.head_depth))  # Head hole
     return obj.translateZ(-C)  # Offset to go through at the bottom
