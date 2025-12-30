@@ -2,8 +2,13 @@
 
 from solid2 import *
 
+from solidpython_library import C
 
-obj = cube(1, 1, 1)
+
+obj = (
+    cube(1, 1, 1)
+    - cylinder(d=0.5, h=1 + 2 * C).translate(0.5, 0.5, -C)
+)
 
 
 if __name__ == '__main__':
