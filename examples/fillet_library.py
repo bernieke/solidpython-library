@@ -17,4 +17,4 @@ obj = fillet.topFillet(
     t=10,
     r=ROUNDING_RADIUS,
     s=ROUNDING_RADIUS / LAYER_HEIGHT,
-    e=ENABLE_FILLETS)
+    e=ENABLE_FILLETS)(obj)
